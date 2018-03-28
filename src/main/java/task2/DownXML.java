@@ -57,7 +57,7 @@ public class DownXML<intWorkerId> {
 		
 		//doc.
 		
-		doc = documentBuilder.parse(new File("staff.xml").toURI().toString());
+		doc = documentBuilder.parse(new File("staff.xml").toURI().getPath());
 		/*
 		try {
 			//doc = documentBuilder.parse(new File(patn.getPatch("staff.xml")));

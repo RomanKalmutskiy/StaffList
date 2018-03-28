@@ -29,24 +29,26 @@ public class Main {
 		ValidationXML validXML = new ValidationXML();
 		
 		
-		System.out.println("1"+ new File("").toURI().toString());// все адресса переделать по образцу
-		try {
+	//	System.out.println("1"+ new File("").toURI().toString());// все адресса переделать по образцу
+	/*	try {
 			System.out.println("2:"+path.getPatch(""));
 		} catch (URISyntaxException e2) {
 			// TODO Auto-generated catch block
 			e2.printStackTrace();
 		}
-		
-		try { try {
-		//	validXML.validate(path.getPatch("staff.xml"), path.getPatch("staff.xsd"));
-			validXML.validate(new File("staff.xml").toURI().toString(), new File("staff.xsd").toURI().toString());
-		} catch (URISyntaxException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}} 
-		catch (SAXException e) { flag = false; } 
+		*/
+		String staffXmlString = new File("staff.xml").toURI().getPath();
+	//	System.out.println("3"+staffXmlString);
+		String staffXsdlString = new File("staff.xsd").toURI().getPath();
+	//	System.out.println(staffXsdlString);
+		 
+		 
+		try { //validXML.validate(path.getPatch("staff.xml"), path.getPatch("staff.xsd"));
+		validXML.validate(staffXmlString, staffXsdlString);}
+		//validXML.validate(new File("staff.xml").toURI().toString(), new File("staff.xsd").toURI().toString());} 
+		catch (SAXException e) { flag = false;  } 
 		catch (IOException e) { flag = false; }
-		//System.out.println("xml file is valid " + flag);
+		System.out.println("xml file is valid " + flag);
 
 		UploadXML upXML = new UploadXML(path);
 		DownXML downXML = new DownXML(path);
@@ -63,13 +65,18 @@ public class Main {
 			try {
 				downXML.parsXML();
 			} catch (ParserConfigurationException e1) {
+				
+				
 
 				e1.printStackTrace();
 			} catch (SAXException e1) {
+				
+				
 
 				e1.printStackTrace();
 			} catch (IOException e1) {
 
+				
 				e1.printStackTrace();
 			}
 
