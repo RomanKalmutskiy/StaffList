@@ -114,6 +114,7 @@ public class Main {
 			System.out.println("'1' - add employee; '2' - delete employee; '3'- change employee;");
 			System.out.println("'4' - add worker to manager; '5' - del worker from manager;");
 			System.out.println("'6'- sort by Id; '7' - sort by surname; '8'- sort by HireDate");
+			System.out.println("'9'- Exit");
 			n = in.nextInt();
 
 			switch (n) {
@@ -766,6 +767,12 @@ public class Main {
 
 				sortByHireDate(listEmployeParse);
 				sort = false;
+			}
+				break;
+				
+			case 9: {
+
+				System.exit(0);
 			}
 				break;
 

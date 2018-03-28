@@ -1,12 +1,10 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <employe>
-	<Other>
-		<type>Other</type>
-		<name>Erdem</name>
-		<surname>Tunguse</surname>
-		<patronymic>Sufit</patronymic>
-		<birthDate>1975/08/03</birthDate>
-		<hireDate>2014/08/10</hireDate>
-		<description > Developer2</description>
-	</Other>
+<Worker>
+<name>Vova</name>
+<surname>Campus</surname>
+<patronymic>Baloban</patronymic>
+<birthDate>1984/01/12</birthDate>
+<hireDate>2013/02/14</hireDate>
+</Worker>
 </employe>
