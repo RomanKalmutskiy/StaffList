@@ -74,12 +74,8 @@ public class UploadEmploueFile {
 		//	StreamResult streamFile = new StreamResult(new File("src/employe.xml"));
 
 			StreamResult streamFile = null;
-			try {
-				streamFile = new StreamResult(new File(path.getPatch("employe.xml")));
-			} catch (URISyntaxException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
+			//streamFile = new StreamResult(new File(path.getPatch("employe.xml")));
+			streamFile = new StreamResult(new File(new File("employe.xml").toURI().getPath()));
 			
 			
 			transformer.transform(domSourse, streamFile);

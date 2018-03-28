@@ -166,12 +166,8 @@ public class UploadXML {
 			DOMSource domSourse = new DOMSource(document);
 		//	StreamResult streamFile = new StreamResult(new File("src/staff.xml"));
 			StreamResult streamFile = null;
-			try {
-				streamFile = new StreamResult(new File(path.getPatch("staff.xml")));
-			} catch (URISyntaxException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
+			//streamFile = new StreamResult(new File(path.getPatch("staff.xml")));
+			streamFile = new StreamResult(new File(new File("staff.xml").toURI().getPath()));
 
 			transformer.transform(domSourse, streamFile);
 			System.out.println("Document saved!!");

@@ -25,7 +25,7 @@ public class DownEmploye {
 	private Other other;
 	private Employe employe;
 	private SimpleDateFormat formatter = new SimpleDateFormat("yyyy/MM/dd");
-	private ClassLoaderFile path;
+//	private ClassLoaderFile path;
 
 	private String type = "";
 	private String name = "";
@@ -46,7 +46,7 @@ public class DownEmploye {
 	}
 
 	public DownEmploye(ClassLoaderFile path) {
-		this.path=path;
+		//this.path=path;
 	}
 
 	public void parsXMLEmploye() {
@@ -59,13 +59,9 @@ public class DownEmploye {
 			e1.printStackTrace();
 		}
 		try {
-			//doc = documentBuilder.parse(new File("src/employe.xml"));
-			try {
-				doc = documentBuilder.parse(new File(path.getPatch("employe.xml")));
-			} catch (URISyntaxException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
+			
+			//doc = documentBuilder.parse(new File(path.getPatch("employe.xml")));
+			doc = documentBuilder.parse(new File(new File("employe.xml").toURI().getPath()));
 			
 		} catch (SAXException e) {
 			// TODO Auto-generated catch block

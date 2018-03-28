@@ -431,6 +431,7 @@ public class Main {
 					}
 
 					if (type != null) {
+					//	UploadEmploueFile upEmp = new UploadEmploueFile(path);
 						UploadEmploueFile upEmp = new UploadEmploueFile(path);
 
 						try {
@@ -440,12 +441,8 @@ public class Main {
 							e.printStackTrace();
 						}
 
-						try {
-							System.out.println("Please fill the file: "+ path.getPatch(""));
-						} catch (URISyntaxException e) {
-							// TODO Auto-generated catch block
-							e.printStackTrace();
-						}
+						//System.out.println("Please fill the file: "+ path.getPatch(""));
+						System.out.println("Please fill the file: "+ new File("employe.xml").toURI().getPath());
 
 						System.out.println("Did you fill file? : Y/N?");
 						s = in.next();

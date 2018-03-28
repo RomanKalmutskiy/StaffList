@@ -15,8 +15,6 @@ public class ClassLoaderFile {
 		ClassLoader classloader = this.getClass().getClassLoader();
 		URL url = classloader.getResource(nameFile);
 	
-	//	System.out.println(Url.toURI());
-	//	System.out.println(Url.getPath());
 		System.out.println(url.toString());
 		 return url.getPath();
 		
