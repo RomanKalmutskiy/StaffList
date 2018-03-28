@@ -24,30 +24,21 @@ public class Main {
 		ArrayList<Employe> listWorker;
 		boolean sort = true;
 		ClassLoaderFile path = new ClassLoaderFile();
-		
-		boolean flag =  true;
+
+		boolean flag = true;
 		ValidationXML validXML = new ValidationXML();
-		
-		
-	//	System.out.println("1"+ new File("").toURI().toString());// все адресса переделать по образцу
-	/*	try {
-			System.out.println("2:"+path.getPatch(""));
-		} catch (URISyntaxException e2) {
-			// TODO Auto-generated catch block
-			e2.printStackTrace();
-		}
-		*/
+
 		String staffXmlString = new File("staff.xml").toURI().getPath();
-	//	System.out.println("3"+staffXmlString);
+		
 		String staffXsdlString = new File("staff.xsd").toURI().getPath();
-	//	System.out.println(staffXsdlString);
-		 
-		 
-		try { //validXML.validate(path.getPatch("staff.xml"), path.getPatch("staff.xsd"));
-		validXML.validate(staffXmlString, staffXsdlString);}
-		//validXML.validate(new File("staff.xml").toURI().toString(), new File("staff.xsd").toURI().toString());} 
-		catch (SAXException e) { flag = false;  } 
-		catch (IOException e) { flag = false; }
+
+		try { validXML.validate(staffXmlString, staffXsdlString);}
+		
+		catch (SAXException e) {
+			flag = false;
+		} catch (IOException e) {
+			flag = false;
+		}
 		System.out.println("xml file is valid " + flag);
 
 		UploadXML upXML = new UploadXML(path);
@@ -65,18 +56,13 @@ public class Main {
 			try {
 				downXML.parsXML();
 			} catch (ParserConfigurationException e1) {
-				
-				
 
 				e1.printStackTrace();
 			} catch (SAXException e1) {
-				
-				
 
 				e1.printStackTrace();
 			} catch (IOException e1) {
 
-				
 				e1.printStackTrace();
 			}
 
@@ -86,11 +72,12 @@ public class Main {
 				sortById(listEmployeParse);
 			}
 
-			if(listEmployeParse.size()>0){
-			
-			maxId = listEmployeParse.get(listEmployeParse.size() - 1).getId();} else{maxId=0;}
-			
-		//	System.out.println("listEmployeParse.size()" + listEmployeParse.size());
+			if (listEmployeParse.size() > 0) {
+
+				maxId = listEmployeParse.get(listEmployeParse.size() - 1).getId();
+			} else {
+				maxId = 0;
+			}
 
 			System.out.printf("%-2s|%-9s|%-10s|%-15s|%-15s|%-12s|%-12s|\n", "employe ID", "Type", "Name", "Surname",
 					"Patronymic", "Birth Date", "Hire Date");
@@ -105,8 +92,6 @@ public class Main {
 						"---------------", "---------------", "------------", "------------");
 
 			}
-
-			// System.out.println(listEmployeParse.size());
 
 			in = new Scanner(System.in);
 			int n;
@@ -432,7 +417,7 @@ public class Main {
 					}
 
 					if (type != null) {
-					//	UploadEmploueFile upEmp = new UploadEmploueFile(path);
+						
 						UploadEmploueFile upEmp = new UploadEmploueFile(path);
 
 						try {
@@ -442,8 +427,7 @@ public class Main {
 							e.printStackTrace();
 						}
 
-						//System.out.println("Please fill the file: "+ path.getPatch(""));
-						System.out.println("Please fill the file: "+ new File("employe.xml").toURI().getPath());
+						System.out.println("Please fill the file: " + new File("employe.xml").toURI().getPath());
 
 						System.out.println("Did you fill file? : Y/N?");
 						s = in.next();
@@ -632,7 +616,7 @@ public class Main {
 						otherCh.setBirthDate(listEmployeParse.get(n).getBirthDate());
 						otherCh.setHireDate(listEmployeParse.get(n).getHireDate());
 						otherCh.setId(listEmployeParse.get(n).getId());
-						otherCh.setDescription("In past: "+listEmployeParse.get(n).getType());
+						otherCh.setDescription("In past: " + listEmployeParse.get(n).getType());
 						System.out.println("Change: Y/N ?");
 						s = in.next();
 						if (s.equals("Y") || s.equals("y")) {
@@ -720,13 +704,11 @@ public class Main {
 
 							if (listWorker.get(wd).getId() == w) {
 
-								// System.out.println("Ups");
 								mark = false;
 
 							}
 
 						if (mark) {
-							// System.out.println("Not ups");
 
 							listWorker.add(workerADD);
 
@@ -769,7 +751,7 @@ public class Main {
 				sort = false;
 			}
 				break;
-				
+
 			case 9: {
 
 				System.exit(0);
@@ -779,7 +761,6 @@ public class Main {
 			}
 
 			System.out.println("UpLoadXML");
-			//System.out.println(listEmployeParse+"/n"+"\n");
 			try {
 				upXML.makeXML(listEmployeParse);
 			} catch (ParserConfigurationException e) {

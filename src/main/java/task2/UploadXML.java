@@ -164,9 +164,7 @@ public class UploadXML {
 		try {
 			Transformer transformer = factoryTr.newTransformer();
 			DOMSource domSourse = new DOMSource(document);
-		//	StreamResult streamFile = new StreamResult(new File("src/staff.xml"));
 			StreamResult streamFile = null;
-			//streamFile = new StreamResult(new File(path.getPatch("staff.xml")));
 			streamFile = new StreamResult(new File(new File("staff.xml").toURI().getPath()));
 
 			transformer.transform(domSourse, streamFile);

@@ -25,7 +25,6 @@ public class DownEmploye {
 	private Other other;
 	private Employe employe;
 	private SimpleDateFormat formatter = new SimpleDateFormat("yyyy/MM/dd");
-//	private ClassLoaderFile path;
 
 	private String type = "";
 	private String name = "";
@@ -46,7 +45,6 @@ public class DownEmploye {
 	}
 
 	public DownEmploye(ClassLoaderFile path) {
-		//this.path=path;
 	}
 
 	public void parsXMLEmploye() {
@@ -60,7 +58,6 @@ public class DownEmploye {
 		}
 		try {
 			
-			//doc = documentBuilder.parse(new File(path.getPatch("employe.xml")));
 			doc = documentBuilder.parse(new File(new File("employe.xml").toURI().getPath()));
 			
 		} catch (SAXException e) {

@@ -14,16 +14,11 @@ public class ValidationXML {
 	private boolean flag =  true;
 	
 
-	public ValidationXML() {
-		
-		
+	public ValidationXML() {	
 	}
 	
 	public void validate(String xmlFile, String validationFile) throws SAXException, IOException{
 		SchemaFactory schemaFactory = SchemaFactory.newInstance(XMLConstants.W3C_XML_SCHEMA_NS_URI);
 		((schemaFactory.newSchema(new File(validationFile))).newValidator()).validate(new StreamSource(new File(xmlFile)));
 	}
-
-	
-
 }
